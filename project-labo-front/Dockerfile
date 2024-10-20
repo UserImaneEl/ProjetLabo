@@ -1,20 +1,24 @@
+# Étape 1 : Utiliser une image de base Node.js
 FROM node:18 as build
 
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Install dependencies
+# Copier les fichiers package.json et package-lock.json
 COPY package*.json ./
+
+# Installer les dépendances
 RUN npm install
 
-# Copy the rest of your application
+# Copier le reste de l'application
 COPY . .
 
-# Build the app
+# Construire l'application
 RUN npm run build
 
-# Use nginx to serve the build
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-
+# Étape 2 : Utiliser le serveur de développement
+# Exposer le port
 EXPOSE 3000
-CMD ["nginx", "-g", "daemon off;"]
+
+# Démarrer le serveur de développement
+CMD ["npm", "start"]
