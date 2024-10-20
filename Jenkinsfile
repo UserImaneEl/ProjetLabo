@@ -8,19 +8,6 @@ pipeline {
             }
         }
 
-        stage('Print Working Directory') {
-            steps {
-                bat 'cd'
-            }
-        }
-
-        stage('List Files') {
-            steps {
-                dir('./ProjetLaboBack') {
-                    bat 'dir'
-                }
-            }
-        }
 
         stage('Build & Test Backend') {
             steps {
@@ -31,13 +18,14 @@ pipeline {
         }
 
         stage('Build & Test Frontend') {
-            steps {
-                dir('./projet-labo-front') {
-                    bat 'npm install'
-                    bat 'npm run build'
-                }
-            }
-        }
+                  steps {
+                      dir('./project-labo-front') {
+                          bat 'npm install'
+                          bat 'npm run build'
+                      }
+                  }
+              }
+
 
         stage('Deploy with Docker Compose') {
             steps {
