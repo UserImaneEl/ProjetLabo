@@ -13,7 +13,7 @@ pipeline {
         // Compilation et tests du Back-end (Spring Boot avec Maven)
         stage('Build & Test Backend') {
             steps {
-                dir('backend') { // Se déplacer dans le répertoire backend
+                dir('ProjetLaboBack') { // Se déplacer dans le répertoire backend
                     bat 'mvn clean install' // Compiler et tester le back-end
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
         // Compilation et tests du Front-end (Angular ou React avec npm/yarn)
         stage('Build & Test Frontend') {
             steps {
-                dir('frontend') { // Se déplacer dans le répertoire frontend
+                dir('projet-labo-front') { // Se déplacer dans le répertoire frontend
                     bat 'npm install'  // Installer les dépendances front-end
                     bat 'npm run build' // Compiler le front-end
                     // Si vous avez des tests, ajoutez la ligne ci-dessous

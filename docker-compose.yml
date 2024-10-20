@@ -11,7 +11,7 @@ services:
 
   frontend:
     build:
-      context: ./ProjetLaboFront  # Chemin vers le Dockerfile du front-end
+      context: ./projet-labo-front # Chemin vers le Dockerfile du front-end
     container_name: frontend-labo-app
     ports:
       - "3000:3000"
