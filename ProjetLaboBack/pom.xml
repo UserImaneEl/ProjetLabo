@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>projet.libre</groupId>
-	<artifactId>ProjetLabo</artifactId>
+	<artifactId>ProjetLaboBack</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ProjetLabo</name>
+	<name>ProjetLaboBack</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
