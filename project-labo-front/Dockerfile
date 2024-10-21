@@ -1,4 +1,4 @@
-# Étape 1 : Utiliser une image de base Node.js
+# Étape 1 : Utiliser une image de base Node.js pour construire l'application Angular
 FROM node:18 as build
 
 # Définir le répertoire de travail
@@ -13,12 +13,16 @@ RUN npm install
 # Copier le reste de l'application
 COPY . .
 
-# Construire l'application
-RUN npm run build
+# Construire l'application pour la production
+RUN npm run build --prod
 
-# Étape 2 : Utiliser le serveur de développement
-# Exposer le port
-EXPOSE 3000
+# Étape 2 : Utiliser une image Nginx pour servir l'application Angular
+FROM nginx:alpine
 
-# Démarrer le serveur de développement
-CMD ["npm", "start"]
+# Copier les fichiers de build dans le répertoire par défaut de Nginx
+COPY --from=build /app/dist/nom-de-ton-projet-angular /usr/share/nginx/html
+
+# Exposer le port 80 pour servir l'application
+EXPOSE 4200
+
+# Démarrer Nginx (aucun CMD n'est nécessaire car Nginx démarre automatiquement)
