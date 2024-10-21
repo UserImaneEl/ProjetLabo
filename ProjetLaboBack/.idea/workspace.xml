@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2fd04e2-2476-44bd-b860-9387f115620f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../project-labo-front/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../project-labo-front/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project-labo-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../project-labo-front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/pc/Documents/ProjetLabo/ProjetLaboBack"
+    "last_opened_file_path": "C:/Users/pc/Documents/ProjetLabo/ProjetLaboBack",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
