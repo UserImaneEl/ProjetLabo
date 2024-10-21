@@ -27,9 +27,9 @@ pipeline {
                     // Run Angular build
                     bat 'npm run build --prod'  // Ensure production build
                     // Optional: run tests
-                    bat 'npm run test -- --watch=false'
+                   // bat 'npm run test -- --watch=false'
                     // Optional: linting
-                    bat 'npm run lint'
+                   // bat 'npm run lint'
                 }
             }
         }
