@@ -20,7 +20,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copier les fichiers de build dans le répertoire par défaut de Nginx
-COPY --from=build /app/dist/nom-de-ton-projet-angular /usr/share/nginx/html
+COPY --from=build /app/dist/project-labo-front /usr/share/nginx/html
 
 # Exposer le port 80 pour servir l'application
 EXPOSE 4200
