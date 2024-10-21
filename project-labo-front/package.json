@@ -1,5 +1,5 @@
 {
-  "name": "prototype-front",
+  "name": "project-labo-front",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:prototype_front": "node dist/prototype_front/server/server.mjs"
+    "serve:ssr:project-labo-front": "node dist/project-labo-front/server/server.mjs"
   },
   "private": true,
   "dependencies": {
