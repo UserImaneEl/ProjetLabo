@@ -1,28 +1,33 @@
-# Étape 1 : Utiliser une image de base Node.js pour construire l'application Angular
-FROM node:18 as build
+# Étape 1 : Construction de l'application
+FROM node:18 AS builder
 
-# Définir le répertoire de travail
+# Définit le répertoire de travail
 WORKDIR /app
 
-# Copier les fichiers package.json et package-lock.json
+# Copie les fichiers de package et installe les dépendances
 COPY package*.json ./
-
-# Installer les dépendances
 RUN npm install
 
-# Copier le reste de l'application
+# Copie le reste des fichiers de l'application
 COPY . .
 
-# Construire l'application pour la production
+# Construire l'application Angular
 RUN npm run build --prod
 
-# Étape 2 : Utiliser une image Nginx pour servir l'application Angular
-FROM nginx:alpine
+# Étape 2 : Exécution de l'application
+FROM node:14
 
-# Copier les fichiers de build dans le répertoire par défaut de Nginx
-COPY --from=build /app/dist/project-labo-front /usr/share/nginx/html
+# Définit le répertoire de travail
+WORKDIR /app
 
-# Exposer le port 80 pour servir l'application
+# Copie les fichiers construits depuis l'étape de construction
+COPY --from=builder /app/dist/project-labo-front /app
+
+# Installe le serveur HTTP simple pour servir les fichiers statiques
+RUN npm install -g http-server
+
+# Expose le port 4200 ou le port de ton choix
 EXPOSE 4200
 
-# Démarrer Nginx (aucun CMD n'est nécessaire car Nginx démarre automatiquement)
+# Démarre le serveur
+CMD ["http-server", "-p", "4200"]
