@@ -7,7 +7,7 @@ services:
       POSTGRES_USER: imane
       POSTGRES_PASSWORD: 123
     ports:  # Corrigé ici
-      - "5432:5432"
+      - "8084:5432"
   backend:
     build:
       context: ./ProjetLaboBack  # Chemin vers le Dockerfile du back-end
