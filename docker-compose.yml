@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   database:
     image: postgres:latest
@@ -6,13 +6,13 @@ services:
       POSTGRES_DB: labo_db
       POSTGRES_USER: imane
       POSTGRES_PASSWORD: 123
-    ports:  # Corrigé ici
+    ports: # Corrigé ici
       - "8084:5432"
     networks:
       - app-network
   backend:
     build:
-      context: ./ProjetLaboBack  # Chemin vers le Dockerfile du back-end
+      context: ./ProjetLaboBack # Chemin vers le Dockerfile du back-end
     container_name: backend-labo-app
     ports:
       - "8080:8080"
@@ -26,7 +26,7 @@ services:
       context: ./project-labo-front # Chemin vers le Dockerfile du front-end
     container_name: frontend-labo-app
     ports:
-      - "3000:3000"
+      - "4200:4200"
     networks:
       - app-network
     depends_on:

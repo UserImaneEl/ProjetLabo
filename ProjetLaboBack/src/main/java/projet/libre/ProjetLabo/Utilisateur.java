@@ -1,12 +1,20 @@
 package projet.libre.ProjetLabo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.Id;
 
-@Entity
+//@Entity
 public class Utilisateur {
 
-    @Id
-    String cin;
+  //  @Id
+    //String cin;
+    String message;
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
