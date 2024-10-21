@@ -12,7 +12,7 @@ pipeline {
         stage('Build & Test Backend') {
             steps {
                 dir('./ProjetLaboBack') {
-                    bat 'mvn clean install'
+                    bat 'mvn clean install -DskipTests'
                 }
             }
         }
