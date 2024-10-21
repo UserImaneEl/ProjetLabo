@@ -8,6 +8,8 @@ services:
       POSTGRES_PASSWORD: 123
     ports:  # Corrigé ici
       - "8084:5432"
+    networks:
+      - app-network
   backend:
     build:
       context: ./ProjetLaboBack  # Chemin vers le Dockerfile du back-end
