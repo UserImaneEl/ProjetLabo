@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2fd04e2-2476-44bd-b860-9387f115620f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../project-labo-front/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../project-labo-front/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project-labo-front/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../project-labo-front/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project-labo-front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../project-labo-front/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project-labo-front/src/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
