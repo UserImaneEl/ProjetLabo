@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build 
 
 # Étape 2 : Exécution de l'application
-FROM node:14
+FROM node:18
 
 # Définit le répertoire de travail
 WORKDIR /app
