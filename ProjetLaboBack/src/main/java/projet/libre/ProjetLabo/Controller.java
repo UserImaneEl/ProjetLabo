@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
 
-   @GetMapping("/getMessage")
+   /*@GetMapping("/getMessage")
     public ResponseEntity<Utilisateur> Hello() {
        Utilisateur user=new Utilisateur();
        user.setMessage("Hello From The Back!");
         return ResponseEntity.ok(user);
 
 
-    }
+    }*/
 
 }
