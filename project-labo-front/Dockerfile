@@ -1,36 +1,35 @@
-
 # Étape 1 : Construction de l'application
 FROM node:18 AS builder
 
 # Définit le répertoire de travail
 WORKDIR /app
 
-# Copie les fichiers de configuration de package
-COPY package*.json ./
-
-# Installe les dépendances
+# Copie les fichiers de package et installe les dépendances
+COPY package*.json ./ 
 RUN npm install
 
-# Copie tout le reste du code
+# Copie le reste des fichiers de l'application
 COPY . .
 
-# Construire l'application pour la production
-RUN npm run build
+# Construire l'application Angular (assure-toi que cela place bien index.html dans dist)
+RUN npm run build 
 
-# Étape 2 : Configuration du serveur pour servir les fichiers construits
-FROM node:18
+# Étape 2 : Exécution de l'application
+FROM node:14
 
 # Définit le répertoire de travail
 WORKDIR /app
 
 # Copie les fichiers construits depuis l'étape de construction
+# Modifie si index.html reste dans /src, sinon il devrait être dans dist/<project>
+COPY --from=builder /app/index.html /app/index.html
 COPY --from=builder /app/dist/project-labo-front /app
 
-# Installe http-server pour servir les fichiers
+# Installe http-server pour servir les fichiers statiques
 RUN npm install -g http-server
 
-# Expose le port 4200
+# Expose le port
 EXPOSE 4200
 
-# Commande pour démarrer le serveur
-CMD ["http-server", "-p", "4200", "."]
+# Démarre le serveur
+CMD ["http-server", "-p", "4200"]
