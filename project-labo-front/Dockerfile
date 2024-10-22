@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Construire l'application pour la production
-RUN npm run build --prod
+RUN npm run build
 
 # Étape 2 : Configuration du serveur pour servir les fichiers construits
 FROM node:18
